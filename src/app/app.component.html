@@ -1,0 +1,24 @@
+
+<div class="search-box">
+  <input type="text"  #myInput>
+  <button (click)="onSearchBtnClick(myInput.value)">Search</button>
+
+</div>
+<div class="result-container">
+  <div class="user-list-container">
+    <div *ngFor="let user of users">
+      <h4>{{user.login}}</h4>
+      <img [src]="user.avatar_url" [alt]="user.login">
+      <button (click)="onViewRepoBtnClick(user)">View Repos</button>
+    </div>
+  </div>
+  <div class="repo-list-container">
+    <div *ngFor="let repo of repos">
+      {{repo.name}}
+    </div>
+
+  </div>
+</div>
+
+
+<!-- (keyup)="onSubmit($event)" [(ngModel)]="searchValue" -->
